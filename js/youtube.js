@@ -8,7 +8,7 @@
  // 3. This function creates an <iframe> (and YouTube player)
  //    after the API code downloads.
 
- function onYouTubeIframeAPIReady() {
+ function onYouTubePlayerAPIReady() {
    //  <div id="player"></div>
    new YT.Player('player', {
      videoId: 'An6LvWQuj_8',//최초 재생할 유튜브 영상 ID
@@ -18,11 +18,12 @@
        playlist: 'An6LvWQuj_8' //반복 재생할 유투브 영상 ID 목록
        
      },
-     event:{
-       onReade:function(event){
-         event.target.mute() //음소거
+     events: {
+       onReady:function(event) {
+         event.target.mute(); //음소거
        }
      }
      
    });
  }
+
